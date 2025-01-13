@@ -1,0 +1,5 @@
+/.vscode
+/nasm
+
+programs/*
+!programs/*.asm
