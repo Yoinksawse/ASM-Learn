@@ -1,10 +1,13 @@
 section .bss
     ans resb 1
 
+section .data
+    arr db 1, 2, 3, 4, 5
+
 section .text
     global _start
 
-; test the method of declaring a label to initialise variable
+; test the method of declaring a segment (using label) to initialise variable
 ;var: dw 100
 
 macros:
@@ -17,9 +20,8 @@ macros:
     %endmacro
     
 _start:
-    arr db 1, 2, 3, 4, 5
-    
     mov al, [arr + 2 * 1]
+    add al, '0'
     mov [ans], al
 
     print ans, 1
